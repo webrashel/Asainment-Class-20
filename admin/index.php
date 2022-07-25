@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<html lang="en">
-
-<?php 
-include "includs/head.php"; 
-
-// include "includs/script.php"; 
-
+	
+<?php
+	// die($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
+	if (basename(__DIR__) != 'admin') {
+		$baseUrl = '../';
+		$isInternal = true;
+	} else {
+		$baseUrl = '';
+		$isInternal = false;
+	}
+ 	include 'includes/head.php'; 
 ?>
-
 <body>
 
-<?php include "includs/mainnavber.php"; ?>
-
+	<?php include 'includes/mainNav.php'; ?>
 
 	<!-- Page container -->
 	<div class="page-container">
 
 		<!-- Page content -->
-		<div class = "page-content">
+		<div class="page-content">
 
 			<!-- Main sidebar -->
 			<div class="sidebar sidebar-main">
@@ -48,9 +50,8 @@ include "includs/head.php";
 					</div>
 					<!-- /user menu -->
 
-	<?php include "includs/navigation.php" ; ?>
 
-
+					<?php include 'includes/navigation.php'; ?>
 
 				</div>
 			</div>
@@ -78,8 +79,8 @@ include "includs/head.php";
 
 					<div class="breadcrumb-line">
 						<ul class="breadcrumb">
-							<li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
-							<li class="active">Dashboard</li>
+							<li><a href="#"><i class="icon-home2 position-left"></i> Home</a></li>
+							<li>Dashboard</li>
 						</ul>
 
 						<ul class="breadcrumb-elements">
@@ -107,8 +108,6 @@ include "includs/head.php";
 
 				<!-- Content area -->
 				<div class="content">
-
-
 
 					<!-- Dashboard content -->
 					<div class="row">
@@ -1340,7 +1339,7 @@ include "includs/head.php";
 
 								<!-- Tabs -->
 			                	<ul class="nav nav-lg nav-tabs nav-justified no-margin no-border-radius bg-indigo-400 border-top border-top-indigo-300">
-									<li class="active">
+									<li>
 										<a href="#messages-tue" class="text-size-small text-uppercase" data-toggle="tab">
 											Tuesday
 										</a>
@@ -1749,12 +1748,10 @@ include "includs/head.php";
 		<!-- /page content -->
 
 	</div>
-
-
 	<!-- /page container -->
 
-
-
-
+	<?php include 'includes/script.php'; ?>
+	
+	
 </body>
 </html>
